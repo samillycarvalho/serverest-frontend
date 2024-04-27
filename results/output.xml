@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.8 on linux)" generated="2024-04-25T16:01:12.230087" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/home/sami/serverestfront/tests">
+<suite id="s1-s1" name="Teste Serverest" source="/home/sami/serverestfront/tests/teste_serverest.robot">
+<test id="s1-s1-t1" name="CT01 - Cadastro" line="7">
+<kw name="abrir navegador" owner="serverest" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-25T16:01:12.338365" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-25T16:01:12.338224" elapsed="0.571880"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-25T16:01:12.910559" elapsed="0.096299"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:12.337692" elapsed="0.669612"/>
+</kw>
+<kw name="Passo 1 - acessar a página de login" owner="serverest">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-04-25T16:01:13.015506" level="INFO">Opening url 'https://front.serverest.dev/login'</msg>
+<arg>url=${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-04-25T16:01:13.013658" elapsed="2.442161"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:13.010396" elapsed="2.445744"/>
+</kw>
+<kw name="Passo 2 - clicar em cadastra-se" owner="serverest">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${buttoncadastratar}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.457745" elapsed="0.052720"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-25T16:01:15.510983" level="INFO">Clicking element '//a[@data-testid='cadastrar'][contains(.,'Cadastre-se')]'.</msg>
+<arg>locator=${buttoncadastratar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.510683" elapsed="0.156058"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:15.456826" elapsed="0.210552"/>
+</kw>
+<kw name="Passo 3 - digitar um nome" owner="serverest">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${nomeInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.671803" elapsed="0.037962"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-25T16:01:15.710239" level="INFO">Typing text 'Sami Lily' into text field 'id:nome'.</msg>
+<arg>locator=${nomeInput}</arg>
+<arg>text=Sami Lily</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.709944" elapsed="0.065072"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2024-04-25T16:01:15.776444" level="INFO">${palavra_randomica} = mmXWcDGC</msg>
+<var>${palavra_randomica}</var>
+<arg>8</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.776038" elapsed="0.000435"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2024-04-25T16:01:15.777249" level="INFO">${palavra_randomica} = mmxwcdgc</msg>
+<var>${palavra_randomica}</var>
+<arg>${palavra_randomica}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.776762" elapsed="0.000520"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-04-25T16:01:15.778647" level="INFO">${EMAIL_TEST} = mmxwcdgc@hotmail.com</msg>
+<arg>${EMAIL_TEST}</arg>
+<arg>${palavra_randomica}@hotmail.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.777509" elapsed="0.001175"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-25T16:01:15.778873" level="INFO">mmxwcdgc@hotmail.com</msg>
+<arg>${EMAIL_TEST}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.778773" elapsed="0.000139"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:15.669183" elapsed="0.109786"/>
+</kw>
+<kw name="Passo 4 - digitar email" owner="serverest">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${emailInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.779315" elapsed="0.019249"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-25T16:01:15.799418" level="INFO">Typing text 'mmxwcdgc@hotmail.com' into text field 'id:email'.</msg>
+<arg>locator=${emailInput}</arg>
+<arg>text=${EMAIL_TEST}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.798916" elapsed="0.060124"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:15.779139" elapsed="0.080029"/>
+</kw>
+<kw name="Passo 5 - digitar senha" owner="serverest">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${senhaInut}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.860999" elapsed="0.014372"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-25T16:01:15.877128" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2024-04-25T16:01:15.903356" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>locator=${senhaInut}</arg>
+<arg>password=123LILy@</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.875947" elapsed="0.053324"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:15.860321" elapsed="0.069054"/>
+</kw>
+<kw name="Passo 6 - escolher perfil admin" owner="serverest">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${selectbox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.929816" elapsed="0.020086"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2024-04-25T16:01:15.950380" level="INFO">Selecting checkbox 'id:administrador'.</msg>
+<arg>locator=${selectbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.950075" elapsed="0.041620"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:15.929594" elapsed="0.062268"/>
+</kw>
+<kw name="Passo 7 - clicar em cadastra-se" owner="serverest">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${cadastrase}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-25T16:01:15.992625" elapsed="0.014801"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-25T16:01:16.007986" level="INFO">Clicking button '//button[@data-testid='cadastrar'][contains(.,'Cadastrar')]'.</msg>
+<arg>locator=${cadastrase}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-25T16:01:16.007706" elapsed="0.044873"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:15.992200" elapsed="0.060504"/>
+</kw>
+<kw name="fechar navegador" owner="serverest" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-25T16:01:16.053245" elapsed="0.073240"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:16.053018" elapsed="0.073873"/>
+</kw>
+<status status="PASS" start="2024-04-25T16:01:12.337276" elapsed="3.789962"/>
+</test>
+<status status="PASS" start="2024-04-25T16:01:12.241951" elapsed="3.886297"/>
+</suite>
+<status status="PASS" start="2024-04-25T16:01:12.230747" elapsed="3.898120"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Teste Serverest">Tests.Teste Serverest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
