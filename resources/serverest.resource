@@ -13,11 +13,11 @@ ${selectbox}                id:administrador
 ${cadastrase}               //button[@data-testid='cadastrar'][contains(.,'Cadastrar')]
 *** Keywords ***
 abrir navegador 
-  Open Browser    browser=headlesschrome
-  Maximize Browser Window
+    Open Browser    browser=headlesschrome
+   Maximize Browser Window
 
 fechar navegador 
-  Close Browser 
+   Close Browser 
 
 
 Passo 1 - acessar a página de login
