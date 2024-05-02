@@ -64,3 +64,4 @@ ex:
 ### Resultados
 
 Tests Log
+![alt text](image.png)
