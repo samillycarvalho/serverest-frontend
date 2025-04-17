@@ -1,0 +1,7 @@
+Login:
+  button_register:  //a[@data-testid='cadastrar'][contains(.,'Cadastre-se')]
+  nomeInput:        id:nome
+  emailInput:       id:email
+  senhaInut:        id:password
+  selectbox:        id:administrador
+  register:         //button[@data-testid='cadastrar'][contains(.,'Cadastrar')]  
