@@ -1,16 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Resource   ../resources/resource.resource
+Resource    ../fixtures/environments/serverest.yaml
+Resource    ../fixtures/elements/login.yaml
 
-*** Variables ***
-
-${url}                      https://front.serverest.dev/login
-${buttoncadastratar}        //a[@data-testid='cadastrar'][contains(.,'Cadastre-se')]
-${nomeInput}                id:nome
-${emailInput}               id:email
-${senhaInut}                id:password
-${selectbox}                id:administrador
-${cadastrase}               //button[@data-testid='cadastrar'][contains(.,'Cadastrar')]
 *** Keywords ***
 abrir navegador 
     Open Browser    browser=headlesschrome
@@ -21,7 +15,7 @@ fechar navegador
 
 
 Passo 1 - acessar a página de login
-  Go to    url=${url}
+  Go to    url=${Serverest.Url}${Serverest.Endpoint_Login}
 
 
 Passo 2 - clicar em cadastra-se

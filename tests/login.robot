@@ -1,5 +1,5 @@
 *** Settings ***
-resource       ../resources/serverest.resource
+Resource       ../resources/resource.resource
 Test Setup     abrir navegador 
 Test Teardown   fechar navegador
 
